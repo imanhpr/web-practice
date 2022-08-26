@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Positioning-1</title>
+    <style>
+    </style>
+</head>
+<body class="relative bg-blue-100 flex h-screen flex-col items-center justify-start h-[2000px]">
+    <p id="test">This is fuck</p>
+    <div class="absolute rounded-full px-4 py-2 bottom-10 left-10 text-white bg-black">
+        <a href="#test" class="text-4xl">Go Top</a>
+    </div>
+    <div class="relative w-1/2 h-48 bg-red-200">
+        <h2 class="text-2xl">Parrent</h2>
+        <div class="absolute bottom-0 left-0 bg-red-400 text-xl px-2 py-1">
+            Hello
+        </div>
+        <div class="absolute bottom-0 right-0 bg-red-400 text-xl px-2 py-1">
+            World
+        </div>
+        <div class="absolute inset-y-0 right-40 bg-red-400 text-xl px-2 py-1">
+            Span test
+        </div>
+    </div>
+</body>
+</html>
