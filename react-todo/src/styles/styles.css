@@ -1,0 +1,27 @@
+@import url("https://unpkg.com/@picocss/pico@1.*/css/pico.min.css");
+
+html {
+  background: gray;
+}
+
+.card-header {
+  border: 0.5px;
+  border-style: solid;
+  border-radius: 4px;
+  border-color: black;
+  padding: 4px;
+  text-align: center;
+  font-size: 48px;
+}
+
+.form {
+  background-color: bisque;
+  margin-top: 12px;
+  border-radius: 4px;
+  padding: 1px 8px;
+}
+
+.card-footer {
+  display: flex;
+  gap: 10px;
+}
