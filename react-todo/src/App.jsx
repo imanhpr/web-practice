@@ -12,6 +12,17 @@ function App() {
     const filterdList = rawWorkList.filter((_, index) => index !== id);
     setRawWorkList(filterdList);
   };
+
+  const handelUpdateById = (id, value) => {
+    const newRawWorkList = rawWorkList.map((oldValue, index) => {
+      if (index === id) {
+        return value;
+      }
+      return oldValue;
+    });
+    console.log(newRawWorkList);
+    setRawWorkList(newRawWorkList);
+  };
   return (
     <div className="container">
       <header
@@ -21,7 +32,11 @@ function App() {
         This is a Simple Todo List App
       </header>
       <InsertForm onSubmitForm={handelOnSubmitFormCb} />
-      <WorkList rawWorkList={rawWorkList} handelDeleteById={handelDeleteById} />
+      <WorkList
+        handelUpdateById={handelUpdateById}
+        rawWorkList={rawWorkList}
+        handelDeleteById={handelDeleteById}
+      />
     </div>
   );
 }
