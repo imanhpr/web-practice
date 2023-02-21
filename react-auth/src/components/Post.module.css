@@ -1,0 +1,26 @@
+.card {
+  padding: 12px;
+  background-color: rgb(49, 49, 49);
+  margin: 0px 1rem;
+  color: white;
+}
+.card * {
+  background-color: inherit;
+}
+.card h2 {
+  color: rgb(89, 246, 61);
+  margin-bottom: 6px;
+  padding-bottom: 3px;
+  border-bottom: 0.5px solid rgb(255, 186, 24);
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  font-weight: 900;
+}
+
+.body {
+  margin-top: 6px;
+  font-size: 18px;
+}
