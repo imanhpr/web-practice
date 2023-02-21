@@ -15,6 +15,9 @@ function NavBar() {
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
+          <li>
+            <NavLink to="/post">Post</NavLink>
+          </li>
           {!auth.isAuth && (
             <li>
               <NavLink to="/auth/login">Login</NavLink>

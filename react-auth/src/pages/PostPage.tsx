@@ -1,14 +1,11 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
+import PostList from "../components/PostList";
 
 function PostPage() {
-  const { post_id } = useParams();
   return (
     <React.Fragment>
-      <div>
-        <Link to="/">back</Link>
-      </div>
-      <h2>Post: {post_id}</h2>
+      <PostList />
     </React.Fragment>
   );
 }
