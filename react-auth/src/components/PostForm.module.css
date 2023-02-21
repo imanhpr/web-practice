@@ -1,0 +1,47 @@
+.card {
+  background-color: rgb(59, 59, 59);
+  padding: 1rem 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  font-weight: 700;
+  gap: 1rem;
+}
+
+input.input {
+  height: 2rem;
+  width: max-content;
+  background-color: rgb(114, 114, 114);
+  padding: 6px;
+  font-size: 18px;
+  font-weight: 800;
+  color: rgb(255, 222, 33);
+  border-radius: 12px;
+}
+textarea.input {
+  background-color: rgb(114, 114, 114);
+  padding: 6px;
+  font-size: 18px;
+  font-weight: 800;
+  color: rgb(255, 222, 33);
+  border-radius: 12px;
+}
+.card * {
+  background-color: inherit;
+}
+
+div.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  padding: 4px 16px;
+  font-size: 18px;
+  font-weight: 900;
+  background-color: goldenrod;
+  border-radius: 12px;
+}
