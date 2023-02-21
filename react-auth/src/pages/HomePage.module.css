@@ -1,0 +1,30 @@
+.container {
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.card {
+  background-color: rgb(35, 33, 60);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+}
+
+.card * {
+  background-color: inherit;
+}
+
+.user-div {
+  margin-top: 4px;
+}
+.exit-btn {
+  padding: 4px 8px;
+  color: black;
+  border-radius: 4px;
+  font-size: larger;
+  background-color: darkgoldenrod;
+}

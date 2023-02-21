@@ -1,0 +1,19 @@
+.nav {
+  height: 60px;
+  color: rgb(50, 4, 4);
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #393939;
+}
+.nav * {
+  background-color: inherit;
+}
+.listUl {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 20rem;
+  background: inherit;
+}
