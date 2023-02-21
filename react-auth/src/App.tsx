@@ -6,6 +6,7 @@ import { authCtx } from "./contexts/auth-context";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import PostPage from "./pages/PostPage";
+import CreatePostPage from "./pages/CreatePostPage";
 
 function App() {
   const authctx = useContext(authCtx)!;
@@ -16,8 +17,10 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/auth">
           {!authctx.isAuth && <Route path="login" element={<LoginPage />} />}
-          <Route path="profile" />
         </Route>
+        {authctx.isAuth && (
+          <Route path="new-post" element={<CreatePostPage />} />
+        )}
         <Route path="/post" element={<PostPage />} />
         <Route path="*" element={<h2>page not found</h2>} />
       </Routes>
