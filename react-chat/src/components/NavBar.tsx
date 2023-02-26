@@ -20,7 +20,11 @@ function NavBar() {
             Home
           </NavLink>
         </li>
-        <li>Profile</li>
+        <li>
+          <NavLink to="/profile" className={setActiveClass}>
+            Profile
+          </NavLink>
+        </li>
         <li>
           <NavLink to="/auth/register" className={setActiveClass}>
             <span>Register</span>

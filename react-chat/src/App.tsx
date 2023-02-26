@@ -3,6 +3,7 @@ import React from "react";
 import NavBar from "./components/NavBar";
 import AuthPage from "./Pages/AuthPage";
 import IndexPage from "./Pages/IndexPage";
+import ProfilePage from "./Pages/ProfilePage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             element={<AuthPage title="Register a new account" apiToCall="" />}
           />
         </Route>
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </React.Fragment>
   );
