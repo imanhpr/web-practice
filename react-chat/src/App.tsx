@@ -22,7 +22,9 @@ function App() {
             element={<AuthPage title="Register a new account" apiToCall="" />}
           /> */}
         </Route>
-        <Route path="/profile" element={<ProfilePage />} />
+        {authContext.authState.isAuth && (
+          <Route path="/profile" element={<ProfilePage />} />
+        )}
       </Routes>
     </React.Fragment>
   );

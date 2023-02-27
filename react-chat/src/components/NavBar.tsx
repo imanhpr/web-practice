@@ -22,24 +22,24 @@ function NavBar() {
             Home
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/profile" className={setActiveClass}>
-            Profile
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/auth/register" className={setActiveClass}>
-            <span>Register</span>
-          </NavLink>
-          {!auth.authState.isAuth && (
-            <React.Fragment>
-              <span> / </span>
-              <NavLink to="/auth/login" className={setActiveClass}>
-                <span>Login</span>
-              </NavLink>
-            </React.Fragment>
-          )}
-        </li>
+        {auth.authState.isAuth && (
+          <li>
+            <NavLink to="/profile" className={setActiveClass}>
+              Profile
+            </NavLink>
+          </li>
+        )}
+        {!auth.authState.isAuth && (
+          <li>
+            <NavLink to="/auth/register" className={setActiveClass}>
+              <span>Register</span>
+            </NavLink>
+            <span> / </span>
+            <NavLink to="/auth/login" className={setActiveClass}>
+              <span>Login</span>
+            </NavLink>
+          </li>
+        )}
       </ul>
     </nav>
   );
