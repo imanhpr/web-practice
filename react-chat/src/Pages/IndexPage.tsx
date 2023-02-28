@@ -1,11 +1,13 @@
 import { useState } from "react";
 import CenterSection from "../components/CenterSection";
+import { useNavigate } from "react-router-dom";
 
 function IndexPage() {
+  const navigate = useNavigate();
   const [roomName, setRoomName] = useState("");
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(roomName);
+    navigate(`/room/${roomName}`);
   };
   return (
     <CenterSection>

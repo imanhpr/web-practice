@@ -5,6 +5,7 @@ import IndexPage from "./Pages/IndexPage";
 import ProfilePage from "./Pages/ProfilePage";
 import LoginPage from "./Pages/LoginPage";
 import { AuthCtx } from "./context/auth-context";
+import ChatRoomPage from "./Pages/ChatRoomPage";
 
 function App() {
   const authContext = useContext(AuthCtx)!;
@@ -24,6 +25,9 @@ function App() {
         </Route>
         {authContext.authState.isAuth && (
           <Route path="/profile" element={<ProfilePage />} />
+        )}
+        {authContext.authState.isAuth && (
+          <Route path="/room/:roomId" element={<ChatRoomPage />} />
         )}
       </Routes>
     </React.Fragment>
