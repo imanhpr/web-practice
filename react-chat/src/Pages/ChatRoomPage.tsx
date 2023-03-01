@@ -21,7 +21,6 @@ function ChatRoomPage() {
     ws.sendJsonMessage({ type: "message", payload: text });
   };
   useEffect(() => {
-    console.log("lasttttttttttttttt", ws.lastJsonMessage);
     const newMessage = ws.lastJsonMessage as {
       id: string;
       from: { username: string; number: string };
