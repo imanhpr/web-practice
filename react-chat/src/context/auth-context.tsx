@@ -10,6 +10,14 @@ interface AuthContext {
     payload: string;
   }>;
 }
+
+export interface UserToken {
+  iat: number;
+  val: boolean;
+  user_name: string;
+  name: string;
+  number: string;
+}
 export const AuthCtx = createContext<AuthContext | null>(null);
 
 export enum AuthActionType {

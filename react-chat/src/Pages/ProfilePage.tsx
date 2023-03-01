@@ -1,17 +1,11 @@
 import { useContext } from "react";
 import CenterSection from "../components/CenterSection";
-import { AuthCtx } from "../context/auth-context";
+import { AuthCtx, UserToken } from "../context/auth-context";
 import { useJwt } from "react-jwt";
 
 function ProfilePage() {
   const authContext = useContext(AuthCtx)!;
-  const { decodedToken: user } = useJwt<{
-    iat: number;
-    val: boolean;
-    user_name: string;
-    name: string;
-    number: string;
-  }>(authContext.authState.token);
+  const { decodedToken: user } = useJwt<UserToken>(authContext.authState.token);
   return (
     <CenterSection>
       <header>

@@ -1,6 +1,6 @@
 function ChatMemberList() {
   return (
-    <aside className=" border rounded-xl bg-dark-600 border-yellow-500 p-4 row-span-5">
+    <aside className=" border rounded-xl bg-dark-600 border-yellow-500 p-4 col-start-4 row-start-2 row-span-4">
       <header className="border-b border-b-yellow-500 mb-3">
         <h2 className="font-bold text-center text-2xl text-amber-500">
           Members
