@@ -1,13 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CenterSection from "../components/CenterSection";
 import { useNavigate } from "react-router-dom";
+
+async function createRoomRequest() {
+  const url = "http://localhost:8001/new-room";
+  const response = await fetch(url);
+  return (await response.json())["room"] as string;
+}
 
 function IndexPage() {
   const navigate = useNavigate();
   const [roomName, setRoomName] = useState("");
+
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     navigate(`/room/${roomName}`);
+  };
+
+  const createHandelr = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    const roomId = await createRoomRequest();
+    navigate(`/room/${roomId}`);
   };
   return (
     <CenterSection>
@@ -31,7 +45,10 @@ function IndexPage() {
           Join
         </button>
       </form>
-      <button className="rounded bg-yellow-500 text-black py-2 px-4 transition w-1/2 hover:bg-yellow-800 hover:text-light-400">
+      <button
+        onClick={createHandelr}
+        className="rounded bg-yellow-500 text-black py-2 px-4 transition w-1/2 hover:bg-yellow-800 hover:text-light-400"
+      >
         Create A Room
       </button>
     </CenterSection>
