@@ -32,6 +32,7 @@ function LoginPage() {
       <Auth
         title="Login with your phone number"
         onFormSubmit={loginRequest}
+        register={false}
         errorMsg={errorMsg}
       />
     </React.Fragment>

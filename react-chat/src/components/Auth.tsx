@@ -1,4 +1,9 @@
-import { useReducer } from "react";
+/* 
+  I can use some kind of generation for cleaning the mess of form inputs but since this project isn't for production use,
+  I'm not going to do it casue it cost me a little more time and i don't want to spend it in here.
+*/
+
+import React, { useReducer } from "react";
 import CenterSection from "./CenterSection";
 
 const FORM_INPUT_CLASS =
@@ -8,11 +13,15 @@ const FORM_CONTAINER_CLASS = "flex flex-col space-y-2";
 enum ActionType {
   SET_NUMBER,
   SET_PASSWORD,
+  SET_USERNAME,
+  SET_NAME,
 }
 
 export interface AuthFormState {
   number: string;
   password: string;
+  user_name?: string;
+  name?: string;
 }
 
 function formReducer(
@@ -28,16 +37,22 @@ function formReducer(
     }
     case ActionType.SET_PASSWORD:
       return { ...state, password: action.payload };
+    case ActionType.SET_NAME:
+      return { ...state, name: action.payload };
+    case ActionType.SET_USERNAME:
+      return { ...state, user_name: action.payload };
   }
 }
 function Auth({
   title,
   errorMsg,
   onFormSubmit,
+  register,
 }: {
   title: string;
   errorMsg: null | string;
   onFormSubmit: (state: AuthFormState) => void;
+  register: boolean;
 }) {
   const [state, dispatch] = useReducer(formReducer, {
     number: "",
@@ -50,6 +65,35 @@ function Auth({
     e.preventDefault();
     onFormSubmit(state);
   };
+  let registerPart: JSX.Element | null = null;
+  if (register) {
+    registerPart = (
+      <React.Fragment>
+        <div className={FORM_CONTAINER_CLASS}>
+          <label htmlFor="_User_Name">User Name : </label>
+          <input
+            onChange={(e) =>
+              changeHandler(ActionType.SET_USERNAME, e.target.value)
+            }
+            className={FORM_INPUT_CLASS}
+            type="user_name"
+            id="_User_Name"
+            value={state.user_name}
+          />
+        </div>
+        <div className={FORM_CONTAINER_CLASS}>
+          <label htmlFor="name">Name : </label>
+          <input
+            onChange={(e) => changeHandler(ActionType.SET_NAME, e.target.value)}
+            className={FORM_INPUT_CLASS}
+            type="name"
+            id="_name"
+            value={state.name}
+          />
+        </div>
+      </React.Fragment>
+    );
+  }
   return (
     <CenterSection>
       <header>
@@ -87,6 +131,7 @@ function Auth({
             value={state.password}
           />
         </div>
+        {registerPart}
         <button
           className="rounded bg-sky-700 py-2 px-4 self-center hover:bg-sky-900"
           type="submit"
