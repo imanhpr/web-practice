@@ -6,6 +6,7 @@ import ProfilePage from "./Pages/ProfilePage";
 import LoginPage from "./Pages/LoginPage";
 import { AuthCtx } from "./context/auth-context";
 import ChatRoomPage from "./Pages/ChatRoomPage";
+import LogoutPage from "./Pages/LogoutPage";
 
 function App() {
   const authContext = useContext(AuthCtx)!;
@@ -17,6 +18,9 @@ function App() {
         <Route path="/auth">
           {!authContext.authState.isAuth && (
             <Route path="login" element={<LoginPage />} />
+          )}
+          {authContext.authState.isAuth && (
+            <Route path="logout" element={<LogoutPage />} />
           )}
           {/* <Route
             path="register"

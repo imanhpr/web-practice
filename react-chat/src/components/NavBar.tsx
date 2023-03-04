@@ -40,6 +40,11 @@ function NavBar() {
             </NavLink>
           </li>
         )}
+        {auth.authState.isAuth && (
+          <NavLink className={setActiveClass} to="/auth/logout">
+            Logout
+          </NavLink>
+        )}
       </ul>
     </nav>
   );
