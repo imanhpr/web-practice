@@ -7,6 +7,7 @@ import LoginPage from "./Pages/LoginPage";
 import { AuthCtx } from "./context/auth-context";
 import ChatRoomPage from "./Pages/ChatRoomPage";
 import LogoutPage from "./Pages/LogoutPage";
+import RegisterPage from "./Pages/RegisterPage";
 
 function App() {
   const authContext = useContext(AuthCtx)!;
@@ -22,10 +23,7 @@ function App() {
           {authContext.authState.isAuth && (
             <Route path="logout" element={<LogoutPage />} />
           )}
-          {/* <Route
-            path="register"
-            element={<AuthPage title="Register a new account" apiToCall="" />}
-          /> */}
+          <Route path="register" element={<RegisterPage />} />
         </Route>
         {authContext.authState.isAuth && (
           <Route path="/profile" element={<ProfilePage />} />
